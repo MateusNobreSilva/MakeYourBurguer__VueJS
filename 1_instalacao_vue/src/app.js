@@ -3,10 +3,18 @@
 const MyNameApp = {
     data() {
         return {
-            name: "Mateus",
-            age: 23
+            name: "",
+            age: 23,
+            input_name: "",
         }
-    }
+    },
+    methods: {
+        submitForm(e) {
+            e.preventDefault();
+            console.log(this.input_name);
+            this.name = this.input_name;
+        }
+    },
 }
 
 Vue.createApp(MyNameApp).mount("#app");
